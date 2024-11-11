@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #todo-container {
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    /* Input Field & Button Styles */
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, button:focus {
+      border-color: #3b7ddd;
+    }
+
+    button {
+      background-color: #3b7ddd;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #2a5d94;
+    }
+
+    /* To-Do List Styling */
+    #todo-list {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fafafa;
+      border-radius: 5px;
+      padding: 10px 15px;
+      margin: 10px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .todo-item:hover {
+      background-color: #f1f1f1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .todo-text {
+      flex-grow: 1;
+      font-size: 16px;
+      color: #333;
+      margin-right: 15px;
+    }
+
+    .todo-text[contenteditable='true']:empty {
+      color: #aaa;
+    }
+
+    /* Button Styles for Delete and Update */
+    .todo-item button {
+      padding: 6px 12px;
+      font-size: 14px;
+      background-color: #ff4757;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .todo-item button:hover {
+      background-color: #e74c3c;
+    }
+
+    .todo-item button:first-of-type {
+      background-color: #1e90ff;
+    }
+
+    .todo-item button:first-of-type:hover {
+      background-color: #007bff;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      #todo-container {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      input, button {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .todo-item button {
+        padding: 5px 10px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="todo-container">
+    <h1>To-Do App</h1>
+    <input type="text" id="todo-input" placeholder="Enter a task" />
+    <button onclick="addTodo()">Add Task</button>
+    <ul id="todo-list"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
